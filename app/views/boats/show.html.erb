@@ -1,3 +1,6 @@
-<h1>Boats#show</h1>
-<p>Find me in app/views/boats/show.html.erb</p>
 
+<h1> <%=  @boat.name %></h1>
+
+<!-- front end: all yours -->
+
+<%= link_to "book this boat", new_boat_booking_path(@boat.id) %>

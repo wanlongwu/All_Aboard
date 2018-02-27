@@ -3,5 +3,9 @@
 
 
 <% @boats.each do |boat| %>
-<%= boat.name  %>
+<%= link_to boat.name, boat_path(boat.id)%>
+<%= boat.length  %>
+<%= boat.price  %>
 <% end %>
+
+<!-- front end all yours~ -->
