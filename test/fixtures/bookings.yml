@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2018-02-27 12:30:06
+  end_date: 2018-02-27 12:30:06
+  user: one
+  boat: one
+
+two:
+  start_date: 2018-02-27 12:30:06
+  end_date: 2018-02-27 12:30:06
+  user: two
+  boat: two
