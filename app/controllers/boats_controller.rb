@@ -10,6 +10,18 @@ class BoatsController < ApplicationController
     @boat = Boat.find(params[:id])
   end
 
+  def destroy
+    @boat = Boat.find(params[:id])
+    if @boat.destroy
+      # flash[:success] = "Deleted!"
+    end
+    redirect_to user_path(@boat.user)
+  end
+
+  def new
+    @boat = Boat.new
+  end
+
   # def search(prompt)
   # end
 end

@@ -1,0 +1,13 @@
+
+<%= @user.name %>
+
+<% @boats.each do |boat|%>
+<%= boat.name %>
+<%= link_to "delete the boat", boat_path(boat), :method => :delete %>
+<% end %>
+
+<% @bookings.each do |booking|%>
+<%= booking.boat.name %>
+<%= booking.start_date %>
+<%= booking.end_date %>
+<% end %>
