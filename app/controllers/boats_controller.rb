@@ -4,8 +4,25 @@ class BoatsController < ApplicationController
 
   def index
     @place = params[:location]
+
+    if @place
+      @all_boats = Boat.where(location: @place)
+    else
+      @all_boats = Boat.all
+    end
+
+    @boats = @all_boats.where.not(latitude: nil, longitude: nil)
+
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude
+      }
+     end
+    
     @boats = Boat.where(location: @place)
     @boats = policy_scope(Boat)
+    
   end
 
   def show
