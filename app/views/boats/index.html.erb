@@ -1,3 +1,5 @@
+
+<!-- front end all yours~ -->
 <h1>Boats#index</h1>
 <p>Find me in app/views/boats/index.html.erb</p>
 <table>
@@ -35,6 +37,45 @@
       <th colspan="3"></th>
     </tr>
   </thread>
+
+<div class="content">
+      <div class="cards container">
+        <div class="row">
+          <% @boats.each do |boat| %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="card" style="background-image: url(background.jpg)">
+                <div class="cardholder">
+                  <div class="card card1">
+                    <h3><%= link_to boat.name, boat_path(boat.id)%></h3>
+                    <p><%= boat.length  %></p>
+                    <img src="images/jad.png" alt="jad's avatar">
+                  </div>
+                   <div class="footer">
+                   <div class="price"><%= boat.price  %></div>
+                   <i class="fa fa-star"></i>
+                   <i class="fa fa-heart"></i>
+                   <i class="fa fa-share"></i>
+                   </div>
+               </div>
+                <p> <%= boat.location  %> </p>
+
+              </div>
+            </div>
+          <% end %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card" style="background-image: url()">
+              <h1> Boat 2</h1>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card" style="background-image: url()">
+              <h1> Boat 3</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
   <tbody>
     <% @boats.each do |boat| %>
