@@ -1,11 +1,34 @@
 <h1>Boats#index</h1>
 <p>Find me in app/views/boats/index.html.erb</p>
 
+<table>
+  <thread>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thread>
 
-<% @boats.each do |boat| %>
-<%= link_to boat.name, boat_path(boat.id)%>
-<%= boat.length  %>
-<%= boat.price  %>
+  <tbody>
+    <% @boats.each do |boat| %>
+      <tr>
+        <td><%= link_to boat.name, boat_path(boat.id)%></td>
+        <td><%= boat.length  %></td>
+        <td><%= boat.price  %></td>
+        <td><%= link_to 'Show', boat_path(boat) %></td>
+        <td><%= link_to 'Edit', edit_boat_path(boat) %></td>
+        <td><%= link_to 'Destroy', boat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
 <% end %>
+
+<%= link_to 'New ', new_boat_path %>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
 
 <!-- front end all yours~ -->
