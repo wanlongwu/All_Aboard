@@ -4,5 +4,6 @@ class UsersController < ApplicationController
     @bookings = Booking.where(user: @user)
     @boats = Boat.where(user: @user)
     # @requests = Booking.where(boats: )
+    authorize @user
   end
 end
