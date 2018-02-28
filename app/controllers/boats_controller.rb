@@ -15,6 +15,14 @@ class BoatsController < ApplicationController
     @boat = Boat.new
     authorize @boat
   end
+    
+  def destroy
+    @boat = Boat.find(params[:id])
+    if @boat.destroy
+      # flash[:success] = "Deleted!"
+    end
+    redirect_to user_path(@boat.user)
+  end
 
   def create
     @boat = Boat.new(boat_params)
@@ -22,7 +30,7 @@ class BoatsController < ApplicationController
     authorize @boat
 
     if @boat.save
-      redirect_to boat_path(@boat)
+      redirect_to user_path(current_user)
       # boat_path(3)
     else
       render :new
@@ -30,6 +38,7 @@ class BoatsController < ApplicationController
   end
   # def search(prompt)
   # end
+  
   private
   def set_boat
     @boat = Boat.find(params[:id])

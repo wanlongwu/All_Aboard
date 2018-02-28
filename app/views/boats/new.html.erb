@@ -1,9 +1,10 @@
+
 <h2>Add a new boat</h2>
-<%= simple_form_for [@boat] do |f| %>
+
+<%= simple_form_for [@user, @boat] do |f| %>
   <%= f.input :name %>
-  <%= f.input :price %>
   <%= f.input :length %>
+  <%= f.input :price %>
   <%= f.input :location %>
-  <%= f.association :user %>
   <%= f.submit "submit", value: "Add", class: "btn btn-primary" %>
 <% end %>
