@@ -36,7 +36,7 @@ boats_attributes = [
   name: 'yamaha A320',
   # capacity: 8,
   price: 500,
-  location: "miami",
+  location: "Miami",
   user_id:1,
   # name: salena gomez
   },
@@ -66,9 +66,9 @@ boats_attributes = [
   {name: 'Shinzo Boat', price: 50, user_id: 4, location: 'Okinawa'},
   {name: 'Sea Glider', price: 450, user_id: 5, location: 'Florida'},
   {name: 'Catamaran', price: 600, user_id: 6, location: 'Florida'},
-  {name:'Luxury Swan Boat', price:50, user_id: 7, location: "Tokyo, Japan"},
-  {name:'Sweet Little Duck Boat', price:1, user_id: 8, location: "Ueno, Tokyo, Japan"},
-  {name:'Dragon Boat', price:999, user_id: 9, location: "Yokohama, Japan"}
+  {name:'Luxury Swan Boat', price:50, user_id: 7, location: "Tokyo"},
+  {name:'Sweet Little Duck Boat', price:1, user_id: 8, location: "Tokyo"},
+  {name:'Dragon Boat', price:999, user_id: 9, location: "Tokyo"}
 ]
 
 Boat.create!(boats_attributes)
