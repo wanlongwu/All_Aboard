@@ -5,6 +5,7 @@
 
 <% @boats.each do |boat|%>
 <%= boat.name %>
+<%= link_to "update the boat", edit_boat_path %>
 <%= link_to "delete the boat", boat_path(boat), :method => :delete %>
 <% end %>
 

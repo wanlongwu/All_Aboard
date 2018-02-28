@@ -1,0 +1,7 @@
+<%= simple_form_for [@user, @boat] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :length %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.submit "submit", class: "btn btn-primary" %>
+<% end %>

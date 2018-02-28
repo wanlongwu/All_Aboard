@@ -29,6 +29,17 @@ class BoatsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def edit
+    @boat = Boat.find(params[:id])
+  end
+
+  def update
+    @boat = Boat.find(params[:id])
+    @boat.update(boat_params)
+    @boat.save!
+    redirect_to user_path(current_user)
+  end
+
 private
 
   def boat_params
