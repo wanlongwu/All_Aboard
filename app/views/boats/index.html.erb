@@ -10,44 +10,25 @@
     </tr>
   </thread>
 
-<div class="content">
-      <div class="cards container">
-        <div class="row">
-          <% @boats.each do |boat| %>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="card" style="background-image: url(background.jpg)">
-                <div class="cardholder">
-                  <div class="card card1">
-                    <h3><%= link_to boat.name, boat_path(boat.id)%></h3>
-                    <p><%= boat.length  %></p>
-                    <img src="images/jad.png" alt="Boats">
-                  </div>
-                   <div class="footer">
-                   <div class="price"><%= boat.price  %></div>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-heart"></i>
-                   <i class="fa fa-share"></i>
-                   </div>
-               </div>
-                <p> <%= boat.location  %> </p>
 
-              </div>
-            </div>
-          <% end %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card" style="background-image: url()">
-              <h1> Boat 2</h1>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card" style="background-image: url()">
-              <h1> Boat 3</h1>
-            </div>
-          </div>
-
+<div class="container">
+  <div class="row">
+    <% @boats.each do |boat| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= asset_path 'boat1.jpeg' %>);">
+          <div class="card-category"><%= boat.name %></div>
+          <div class="card-description">
+          <h2><%= link_to boat.name, boat_path(boat.id)%></h2>
+          <p><%= boat.location  %></p>
+        </div>
+        </a>
         </div>
       </div>
-    </div>
+    <% end %>
+  </div>
+</div>
+
+
 
 <%= link_to 'New ', new_boat_path %>
 
@@ -58,8 +39,4 @@
   data-markers="<%= @markers.to_json %>"
 ></div>
 
-<!-- <% if policy(Boat).new? %>
-  <%= link_to 'New Boat', new_boat_path %>
-<% end %> -->
 
-<!-- front end all yours~ -->
