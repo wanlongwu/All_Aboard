@@ -15,6 +15,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Boat.destroy_all
+User.destroy_all
 names_attributes = [
   {password:"123456", name: "Salena Gomez", email:'sg@sg.com'},
   {password:"123456", name: "Mark allen", email:'ma@ma.com'},
