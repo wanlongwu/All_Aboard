@@ -5,7 +5,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     startdate = Date.new(params[:booking][:"start_date(1i)"].to_i,
                         params[:booking][:"start_date(2i)"].to_i,
                         params[:booking][:"start_date(3i)"].to_i)
@@ -36,7 +35,7 @@ class BookingsController < ApplicationController
 
   end
 
-private
+  private
   def booking_params
     params.require(:booking).permit(:boat_id, :booking)
   end
