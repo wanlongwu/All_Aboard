@@ -22,6 +22,17 @@ class BoatsController < ApplicationController
     @boat = Boat.new
   end
 
-  # def search(prompt)
-  # end
+  def create
+    @boat = Boat.new(boat_params)
+    @boat.user = current_user
+    @boat.save
+    redirect_to user_path(current_user)
+  end
+
+private
+
+  def boat_params
+    params.require(:boat).permit(:name, :length, :price, :location)
+  end
+
 end

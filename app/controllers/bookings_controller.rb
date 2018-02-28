@@ -23,14 +23,15 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @dose = Dose.find(params[:id])
-    @dose.destroy
-    redirect_to cocktail_path(@dose.cocktail)
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to user_path(@booking.user)
   end
 
   def update
 
   end
+
   def edit
 
   end
