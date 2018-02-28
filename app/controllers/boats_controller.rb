@@ -5,6 +5,7 @@ class BoatsController < ApplicationController
   def index
     @place = params[:location]
     @boats = Boat.where(location: @place)
+    @boats = policy_scope(Boat)
   end
 
   def show
@@ -21,7 +22,8 @@ class BoatsController < ApplicationController
     authorize @boat
 
     if @boat.save
-      redirect_to boats_path(:id)
+      redirect_to boat_path(@boat)
+      # boat_path(3)
     else
       render :new
     end
