@@ -1,5 +1,31 @@
 <h1>Boats#index</h1>
 <p>Find me in app/views/boats/index.html.erb</p>
+<table>
+  <tbody>
+    <% @boats.each do |boat| %>
+      <tr>
+        <td> <%= link_to boat.name, boat_path(boat)%></td>
+        <td> <%= boat.length  %></td>
+        <td> <%= boat.price  %></td>
+        <td>
+          <% if policy(boat).show? %>
+            <%= link_to 'Show', boat %>
+          <% end %>
+        </td>
+        <td>
+          <% if policy(boat).edit? %>
+            <%= link_to 'Edit', edit_boat_path(boat) %>
+          <% end %>
+        </td>
+        <td>
+          <% if policy(boat).destroy? %>
+            <%= link_to 'Destroy', boat, method: :delete, data: {confirm: "Are you sure?"} %></td>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <table>
   <thread>
@@ -30,5 +56,9 @@
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
+    
+<!-- <% if policy(Boat).new? %>
+  <%= link_to 'New Boat', new_boat_path %>
+<% end %> -->
 
 <!-- front end all yours~ -->
