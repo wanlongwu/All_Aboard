@@ -3,9 +3,23 @@ class BookingsController < ApplicationController
     @boat = Boat.find(params[:boat_id])
     @booking = Booking.new
   end
+
   def create
+
+    startdate = Date.new(params[:booking][:"start_date(1i)"].to_i,
+                        params[:booking][:"start_date(2i)"].to_i,
+                        params[:booking][:"start_date(3i)"].to_i)
+    enddate = Date.new(params[:booking][:"end_date(1i)"].to_i,
+                        params[:booking][:"end_date(2i)"].to_i,
+                        params[:booking][:"end_date(3i)"].to_i)
+    # raise
     @booking = Booking.new(booking_params)
+    @booking.boat = Boat.find(params[:"boat_id"])
+    @booking.start_date = startdate
+    @booking.end_date = enddate
+    @booking.user = current_user
     @booking.save
+    redirect_to user_path(current_user)
   end
 
   def destroy
@@ -23,7 +37,7 @@ class BookingsController < ApplicationController
 
 private
   def booking_params
-    paras.require(:booking).permit(:user_id, :boat_id, :start_date, :end_date)
+    params.require(:booking).permit(:boat_id, :booking)
   end
 
 end
