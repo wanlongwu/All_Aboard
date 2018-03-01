@@ -14,7 +14,7 @@ gem 'pg_search'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 4.7'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'

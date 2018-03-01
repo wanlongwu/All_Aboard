@@ -19,3 +19,14 @@
 //   justify-content: space-between;
 //   width: 100%;
 // }
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -100px;
+}
