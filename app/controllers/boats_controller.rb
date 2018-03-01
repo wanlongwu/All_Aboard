@@ -13,6 +13,8 @@ class BoatsController < ApplicationController
 
     @boats = @boats.where.not(latitude: nil, longitude: nil)
 
+
+
     @markers = @boats.map do |boat|
       {
         lat: boat.latitude,
@@ -21,7 +23,9 @@ class BoatsController < ApplicationController
      end
 
     @boats = Boat.where(location: @place)
-    @boats = policy_scope(Boat)
+
+    # @boats = policy_scope(Boat)
+    # raise
 
   end
 
