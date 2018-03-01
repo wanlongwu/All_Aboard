@@ -1,10 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-s-6 col-sm-offset-4">
+    <h2>Add a new boat</h2>
 
-<h2>Add a new boat</h2>
-
-<%= simple_form_for [@user, @boat] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :length %>
-  <%= f.input :price %>
-  <%= f.input :location %>
-  <%= f.submit "submit", value: "Add", class: "btn btn-primary" %>
-<% end %>
+      <%= simple_form_for [@user, @boat] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :length %>
+        <%= f.input :price %>
+        <%= f.input :location %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit "submit", value: "Add", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

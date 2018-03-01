@@ -1,6 +1,13 @@
 <div class="show_head" >
 </div>
 
+
+<% if @boat.photo.present? %>
+  <%= image_tag @boat.photo.url %>
+<% end %>
+
+<h1> <%=  @boat.name %></h1>
+
   <div class="show-test">
       <h1> <%=  @boat.name %></h1>
     </div>
