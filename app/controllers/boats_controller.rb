@@ -19,20 +19,21 @@ class BoatsController < ApplicationController
         lng: boat.longitude
       }
      end
-    
+
     @boats = Boat.where(location: @place)
     @boats = policy_scope(Boat)
-    
+
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
     @boat = Boat.new
     authorize @boat
   end
-    
+
   def destroy
     @boat = Boat.find(params[:id])
     if @boat.destroy
@@ -55,7 +56,7 @@ class BoatsController < ApplicationController
   end
   # def search(prompt)
   # end
-  
+
   private
   def set_boat
     @boat = Boat.find(params[:id])
