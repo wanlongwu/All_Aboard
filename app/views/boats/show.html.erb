@@ -1,11 +1,15 @@
+<div class="show_head" >
+</div>
 
-<h1> <%=  @boat.name %></h1>
-
-<!-- front end: all yours -->
-
-<%= simple_form_for [@boat, @booking] do |f| %>
-  <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
-  <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
-  <%= f.submit "Book this boat", class: "btn btn-primary" %>
-<% end %>
-
+  <div class="show-test">
+      <h1> <%=  @boat.name %></h1>
+    </div>
+    <!-- front end: all yours -->
+    <div class="calendar-box">
+      <%= simple_form_for [@boat, @booking], :html=> { class: 'show-short-form' } do |f| %>
+        <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
+        <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
+        <%= f.submit "Book this boat", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>

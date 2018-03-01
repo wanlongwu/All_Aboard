@@ -1,0 +1,23 @@
+.show_head {
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
+  url(image-path('background.jpg'));
+  height: 42vh;
+}
+
+.show-test {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendar-box {
+  border-style: solid;
+  border: gray, 10px;
+  width: 314px;
+  background-color: blue;
+}
+
+.show-short-form {
+  background-color: blue;
+}
+
