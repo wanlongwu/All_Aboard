@@ -5,13 +5,13 @@ class BoatsController < ApplicationController
   def index
     @place = params[:location]
 
-    if @place
-      @all_boats = Boat.where(location: @place)
+    if @place.present?
+      @boats = Boat.where(location: @place)
     else
-      @all_boats = Boat.all
+      @boats = Boat.all
     end
 
-    @boats = @all_boats.where.not(latitude: nil, longitude: nil)
+    @boats = @boats.where.not(latitude: nil, longitude: nil)
 
     @markers = @boats.map do |boat|
       {
@@ -19,10 +19,10 @@ class BoatsController < ApplicationController
         lng: boat.longitude
       }
      end
-    
+
     @boats = Boat.where(location: @place)
     @boats = policy_scope(Boat)
-    
+
   end
 
   def show
@@ -32,7 +32,7 @@ class BoatsController < ApplicationController
     @boat = Boat.new
     authorize @boat
   end
-    
+
   def destroy
     @boat = Boat.find(params[:id])
     if @boat.destroy
@@ -55,7 +55,7 @@ class BoatsController < ApplicationController
   end
   # def search(prompt)
   # end
-  
+
   private
   def set_boat
     @boat = Boat.find(params[:id])
