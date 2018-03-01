@@ -10,6 +10,7 @@ gem 'rails', '5.1.5'
 gem 'redis'
 gem "geocoder"
 gem "pundit"
+gem 'pg_search'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
