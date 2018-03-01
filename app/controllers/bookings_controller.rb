@@ -31,11 +31,23 @@ class BookingsController < ApplicationController
   end
 
   def update
-
+    @booking = Booking.find(params[:id])
+    startdate = Date.new(params[:booking][:"start_date(1i)"].to_i,
+                        params[:booking][:"start_date(2i)"].to_i,
+                        params[:booking][:"start_date(3i)"].to_i)
+    enddate = Date.new(params[:booking][:"end_date(1i)"].to_i,
+                        params[:booking][:"end_date(2i)"].to_i,
+                        params[:booking][:"end_date(3i)"].to_i)
+     @booking.start_date = startdate
+    @booking.end_date = enddate
+    @booking.save!
+    redirect_to user_path(current_user)
+    authorize @booking
   end
 
   def edit
-
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   private
