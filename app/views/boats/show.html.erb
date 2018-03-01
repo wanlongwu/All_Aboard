@@ -1,4 +1,8 @@
 
+<% if @boat.photo.present? %>
+  <%= image_tag @boat.photo.url %>
+<% end %>
+
 <h1> <%=  @boat.name %></h1>
 
 <!-- front end: all yours -->
