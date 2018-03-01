@@ -3,9 +3,13 @@
     <h1>All Aboard</h1>
     <p>Book a boat, and enjoy the adventure</p>
     <!-- <a href="" class="btn-yours">search</a> -->
-    <form action="/boats" method="get">
-    <input type="text" class="input-lg" name="location" placeholder="What's your destination">
-    <input type="submit" class="btn btn-primary" value="search">
-  </form>
+    <%= form_tag boats_path, method: :get do %>
+      <%= text_field_tag :location,
+      params[:location],
+      class: "form-control",
+      placeholder: "What's your destination?"
+    %>
+    <% end %>
+
   </div>
 </div>

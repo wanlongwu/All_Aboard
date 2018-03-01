@@ -18,3 +18,9 @@
 
 
 <%= link_to "book this boat", new_boat_booking_path(@boat.id) %>
+<%= simple_form_for [@boat, @booking] do |f| %>
+  <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
+  <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
+  <%= f.submit "Book this boat", class: "btn btn-primary" %>
+<% end %>
+
