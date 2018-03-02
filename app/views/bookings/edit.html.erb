@@ -1,5 +1,12 @@
-<%= simple_form_for [@boat, @booking] do |f| %>
-  <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
-  <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
-  <%= f.submit "submit", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-s-6 col-sm-offset-4">
+
+      <%= simple_form_for [@boat, @booking] do |f| %>
+      <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
+      <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
+      <%= f.submit "submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
