@@ -13,3 +13,8 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+
+ul {
+  list-style-type: none;
+}
