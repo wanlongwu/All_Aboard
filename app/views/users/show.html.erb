@@ -1,14 +1,14 @@
-<body>
 
-  <div class="row">
-    <div class="col-xs-3">
-  <!--       <%= image_tag @user.avatar.url %> -->
-    <div class="profile_layout">
-        <ul>
+<div class="row row-body">
+  <div class="col-xs-3">
+<!--        -->
+  <div class="profile_layout">
+      <ul>
+        <li><%= image_tag @user.avatar.url, :style => "max-height: 200px; max-width: 175px;"%></li>
         <li><%= @user.name %></li>
         <li><%= link_to "Add a boat", new_boat_path %></li>
         <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-      </div>
+      </ul>
     </div>
 
   <div class="container">
@@ -37,10 +37,11 @@
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Action</th>
+            <td><%= link_to booking.boat.name, boat_path(booking.boat) %></td>
+            <td><%= booking.start_date.strftime("%A, %d %b %Y") %></td>
+            <td><%= booking.end_date.strftime("%A, %d %b %Y") %></td>
+            <td><p><%= link_to "Update", edit_booking_path(booking) %></p></p>
+                <p><%= link_to "Cancel", booking_path(booking), method: :delete %></p></td>
           </tr>
         </thead>
         <tbody>
@@ -61,4 +62,3 @@
       </div>
     </div>
   </div>
-</body>
