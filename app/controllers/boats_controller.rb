@@ -1,6 +1,7 @@
 class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
+  skip_after_action :verify_policy_scoped, only: [:index]
 
   def index
     @place = params[:location]
@@ -21,12 +22,6 @@ class BoatsController < ApplicationController
         lng: boat.longitude
       }
      end
-
-    @boats = Boat.where(location: @place)
-
-    # @boats = policy_scope(Boat)
-    # raise
-
   end
 
   def show
@@ -57,6 +52,16 @@ class BoatsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    # @boat = Boat.find(params[:id])
+  end
+
+  def update
+    @boat.update(boat_params)
+    @boat.save!
+    redirect_to user_path(current_user)
   end
   # def search(prompt)
   # end
