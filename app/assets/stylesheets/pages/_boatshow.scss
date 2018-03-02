@@ -1,8 +1,17 @@
-.show_head {
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
-  url(image-path('background.jpg'));
-  height: 42vh;
+.boatstyle {
+  // height: 100%;
+  // width:100%;
+  // background-repeat: no-repeat !important;
+  // background-size: cover !important;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 500px;
+  background-position: 100% !important;
+
 }
+
 
 .show-test {
   width: 100%;
@@ -19,4 +28,29 @@
 
 .show-test h1 {
   font-size: 15px;
+}
+.bookform {
+  margin-left: 45px !important;
+    width: 376px !important;
+    z-index: 3 !important;
+}
+
+.mainform {
+  margin: 0px !important;
+  border: 1px solid #e4e4e4 !important;
+  background-color: #ffffff !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top:20px;
+  margin-bottom:35px;
+}
+.title {
+  flex: 0 0 20%;
+}
+.info-content{
+  flex: 0 0 40%;
 }
