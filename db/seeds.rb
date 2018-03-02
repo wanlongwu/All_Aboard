@@ -57,9 +57,10 @@ boats_attributes = [
   # year: 2000,
   # capacity: 10,
   price: 700,
-  location: 'slidell LA'
+  location: 'slidell LA',
+  photo: "remote_photo_url: 'http://images.boats.com/resize/1/6/27/6500627_20171020071454151_1_LARGE.jpg?w=300&h=300'"
   # name: adam sandler
-  },
+  }
   {name: 'Falcon', price: 600, user_id: 1, location: 'Meguro'},
   {name: 'Eagle', price: 2100, user_id: 2, location: 'Akihabara'},
   {name: 'Pigeon', price: 10000, user_id: 3, location: 'Tsukihji'},
