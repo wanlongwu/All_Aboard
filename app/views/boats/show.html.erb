@@ -1,28 +1,49 @@
-<div class="show_head" >
+<div class="top-content">
+
+<% if @boat.photo.present? %>
+  <%= image_tag @boat.photo.url, :class => "boatstyle" %>
+<% end %>
 </div>
 
 
-<% if @boat.photo.present? %>
-  <%= image_tag @boat.photo.url %>
-<% end %>
 
-<h1> <%=  @boat.name %></h1>
-
-  <div class="show-test">
-      <h1> <%=  @boat.name %></h1>
-    </div>
-    <!-- front end: all yours -->
-    <div class="calendar-box">
-      <%= simple_form_for [@boat, @booking], :html=> { class: 'show-short-form' } do |f| %>
-        <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
-        <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
-        <%= f.submit "Book this boat", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <div id="description" class="container">
-      <div class="row">
-        <h2> About this Boat</h2>
+<div class="container">
+  <div class="title">
+   <h1> <%=  @boat.name %></h1>
+  </div>
+  <div class="info-content">
+    <p>This boat is PERFECT for 1 year anniversary!
+    a huge recommendation for those who want crazy night our with no strings attached.</p>
+  </div>
+  <div>
+    <div style="margin-top:32px;margin-bottom:24px">
+      <div class="bookform">
+        <div class="mainform">
+          <div class="show-test">
+              <h1> <%=  @boat.name %></h1>
+            </div>
+            <!-- front end: all yours -->
+            <div class="calendar-box">
+              <%= simple_form_for [@boat, @booking], :html=> { class: 'show-short-form' } do |f| %>
+                <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
+                <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
+                <%= f.submit "Book this boat", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+            <div id="description" class="container">
+              <div class="row">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
+<div id="description" class="container-section">
+  <div class="row">
+
+  </div>
+
+</div>
