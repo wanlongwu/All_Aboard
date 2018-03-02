@@ -5,8 +5,6 @@
 <% end %>
 </div>
 
-
-
 <div class="container-show">
   <div class="title">
    <h1> <%=  @boat.name %></h1>
@@ -15,14 +13,14 @@
     <p>This boat is PERFECT for 1 year anniversary!
     a huge recommendation for those who want crazy night our with no strings attached.</p>
   </div>
-  <div>
+  <div class="bookingform">
     <div style="margin-top:32px;margin-bottom:24px">
       <div class="bookform">
         <div class="mainform">
           <div class="show-test">
               <h1> <%=  @boat.name %></h1>
+              <h6>$<%= @boat.price %>/day</h6>
             </div>
-            <!-- front end: all yours -->
             <div class="calendar-box">
               <%= simple_form_for [@boat, @booking], :html=> { class: 'show-short-form' } do |f| %>
                 <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
@@ -45,5 +43,4 @@
   <div class="row">
 
   </div>
-
 </div>

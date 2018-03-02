@@ -20,18 +20,16 @@
 }
 
 .calendar-box {
-  border-style: solid;
-  border: grey, 10px;
   width: 314px;
-  background-color: grey;
+  background-color: white;
 }
 
 .show-test h1 {
-  font-size: 15px;
+  font-size: 30px;
 }
 .bookform {
   margin-left: 45px !important;
-    width: 376px !important;
+    width: 376px;
     z-index: 3 !important;
 }
 
@@ -42,15 +40,31 @@
   padding-left: 24px !important;
   padding-right: 24px !important;
 }
+
 .container-show {
   display: flex;
   justify-content: space-between;
   margin-top:20px;
-  margin-bottom:35px;
+  margin-bottom:80px;
 }
 .title {
   flex: 0 0 20%;
 }
 .info-content{
   flex: 0 0 40%;
+  margin-top:20px;
+}
+.description-wrapper{
+  margin-top: 20px;
+}
+h6{
+  margin-top:35px;
+}
+.title p{
+  font-size:14px;
+  color: #45050C;
+}
+
+.bookingform {
+  background-color:#3592CC;
 }
