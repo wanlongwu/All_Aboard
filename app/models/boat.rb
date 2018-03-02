@@ -1,6 +1,6 @@
 class Boat < ApplicationRecord
 validates :name, uniqueness: true, presence: true
-validates :photo, presence: true
+# validates :photo, presence: true
 
 belongs_to :user
 has_many :bookings
