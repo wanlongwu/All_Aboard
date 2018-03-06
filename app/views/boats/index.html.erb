@@ -1,28 +1,17 @@
 
 <!-- front end all yours~ -->
 <!--  -->
-<table>
-  <thread>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thread>
-
-
 <div class="main-container">
-  <div class="cards-container">
+  <div class="cards-container card-body">
     <div class="row">
       <% @boats.each do |boat| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= boat.photo? ? (image_path boat.photo.url) : (image_path("boat1.jpg")) %>');">
+        <div class="col-xs-12 col-sm-4 boat-row">
+          <div class="card card-shadow" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= boat.photo? ? (image_path boat.photo.url) : (image_path("boat1.jpg")) %>');">
             <div class="card-category"><%= boat.name %></div>
             <div class="card-description">
             <h2><%= link_to boat.name, boat_path(boat.id)%></h2>
             <p><%= boat.location  %></p>
-          </div>
-          </a>
+            </div>
           </div>
         </div>
       <% end %>
