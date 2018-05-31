@@ -6,13 +6,15 @@
     <div class="row">
       <% @boats.each do |boat| %>
         <div class="col-xs-12 col-sm-4 boat-row">
-          <div class="card card-shadow" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= boat.photo? ? (image_path boat.photo.url) : (image_path("boat1.jpg")) %>');">
-            <div class="card-category"><%= boat.name %></div>
-            <div class="card-description">
-            <h2><%= link_to boat.name, boat_path(boat.id)%></h2>
-            <p><%= boat.location  %></p>
+          <%= link_to boat_path(boat.id) do %>
+            <div class="card card-shadow" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= boat.photo? ? (image_path boat.photo.url) : (image_path("boat1.jpg")) %>');">
+              <div class="card-category"><%= boat.location %></div>
+              <div class="card-description">
+              <h2><%= boat.name %></h2>
+              <p><%= "$#{boat.price} per day"  %></p>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
